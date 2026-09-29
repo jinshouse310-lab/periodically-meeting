@@ -1,0 +1,11 @@
+# Netlify 設定 / Netlify configuration
+# 静的サイトなのでビルド不要。リポジトリのルートをそのまま公開します。
+# Static site, no build step: publish the repository root as-is.
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

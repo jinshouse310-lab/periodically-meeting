@@ -38,3 +38,18 @@ All meetings live in `meetings.js`. Give every text field both `ja` and `en`.
 
 同梱の定例会はサンプルです。実際の内容に置き換えたら `sample: true` を `false` にすると注記が消えます。
 The bundled meetings are samples. Set `sample: false` once you replace them to hide the notice.
+
+## Netlify で公開する / Deploy on Netlify
+
+1. https://app.netlify.com で **Add new site → Import an existing project** を選ぶ
+2. GitHub を選び、リポジトリ `jinshouse310-lab/periodically-meeting` を指定する
+3. ブランチに `claude/youthful-edison-clqmxr`（または main）を選ぶ。Build command は空、Publish directory は `.`（`netlify.toml` に設定済みなので自動で入ります）
+4. **Deploy** を押すと `https://<site名>.netlify.app` で確認できます。以後、ブランチに push するたびに自動で更新されます。
+
+Netlify CLI を使う場合 / With the Netlify CLI:
+
+```sh
+npm i -g netlify-cli
+netlify login
+netlify deploy --prod --dir .
+```
